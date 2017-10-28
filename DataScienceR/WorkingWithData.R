@@ -34,3 +34,65 @@ temp <- filter(
 
 #inspect the results
 head(temp);
+
+#compute a new column
+temp <- mutate(
+               .data = temp,
+               Consumption = Fuel.Economy * 0.425);
+
+#inspect the results
+head(temp);
+
+#group by a column
+temp <- group_by(
+               .data = temp,
+               Cylinders);
+
+#inspect the results
+head(temp);
+
+#aggregate based on groups
+temp <- summarise(
+               .data = temp,
+               Avg.Consumption = mean(Consumption));
+
+#inspect the results
+head(temp);
+
+#aggregate based on groups
+temp <- summarise(
+               .data = temp,
+               Avg.Consumption = mean(Consumption));
+
+#arrange the rows in descending order
+temp <- arrange(
+               .data = temp,
+               desc(Avg.Consumption));
+
+#inspect the results
+head(temp);
+
+#convert data frame
+efficency <- as.data.frame(temp);
+
+#inspect the results
+print(efficency);
+
+#chains the same methods together
+efficency <- cars %>%
+    select(Fuel.Economy, Cylinders, Transmission) %>%
+    filter(Transmission == "Automatic") %>%
+    mutate(Consumtion = Fuel.Economy * 0.425) %>%
+    group_by(Cylinders) %>%
+    summarize(Avg.Consumption = mean(Consumtion)) %>%
+    arrange(desc(Avg.Consumption)) %>%
+    as.data.frame();
+
+#inspect the results
+print(efficency);
+
+#save the results to a csv file
+write.csv(
+          x = efficency,
+          file = "Fuel Efficiency.csv",
+          row.names = FALSE);
