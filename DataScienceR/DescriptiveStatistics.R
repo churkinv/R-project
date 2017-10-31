@@ -7,4 +7,5 @@ cars <- read.csv("Cars.csv")
 #peek at the date
 head(cars)
 
-#create a freaquency table
+#create a freaquency table: How many cars do we have of each transmission type
+table (cars$Transmission)
