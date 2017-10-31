@@ -12,3 +12,12 @@ table(cars$Transmission)
 
 #get the minimum value: What does the distribution of values in our Fuel.Economy variable look like?
 min(cars$Fuel.Economy)
+
+#get the maximum value
+max(cars$Fuel.Economy)
+
+#get the average value
+mean(cars$Fuel.Economy)
+
+#get the median value
+median(cars$Fuel.Economy)
