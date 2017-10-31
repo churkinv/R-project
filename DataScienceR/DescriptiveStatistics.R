@@ -21,3 +21,20 @@ mean(cars$Fuel.Economy)
 
 #get the median value
 median(cars$Fuel.Economy)
+
+#get the quartiles
+quantile(cars$Fuel.Economy)
+
+#get the standard deviation
+sd(cars$Fuel.Economy)
+
+#get the total value
+sum(cars$Fuel.Economy)
+
+#get the correlation coeficient: how do they are related
+cor(
+    x= cars$Cylinders,
+    y = cars$Fuel.Economy)
+
+#summirize 
+summary(cars)
