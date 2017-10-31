@@ -8,4 +8,7 @@ cars <- read.csv("Cars.csv")
 head(cars)
 
 #create a freaquency table: How many cars do we have of each transmission type
-table (cars$Transmission)
+table(cars$Transmission)
+
+#get the minimum value: What does the distribution of values in our Fuel.Economy variable look like?
+min(cars$Fuel.Economy)
