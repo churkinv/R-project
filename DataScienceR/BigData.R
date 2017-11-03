@@ -48,3 +48,10 @@ lines(
       y = m * irisff$Petal.Length[] + b,
       col = "red",
       lwd = 3)
+
+#predict new values with the model
+predict(
+        object = model,
+        newdata = data.frame(
+        Petal.Length = c(2, 5, 7),
+        Petal.Width = c(0,0,0)))
