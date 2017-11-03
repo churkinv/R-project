@@ -27,3 +27,14 @@ lines(
       y = model$fitted,
       col = "red",
       lwd = 3)
+
+#get correlation coefficient
+cor(
+    x = iris$Petal.Length,
+    y = iris$Petal.Width)
+
+#predict new values from the model
+predict(
+        object = model,
+        newdata = data.frame(
+        Petal.Length=c(2,5,7)))
