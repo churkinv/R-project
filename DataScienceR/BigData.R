@@ -54,4 +54,4 @@ predict(
         object = model,
         newdata = data.frame(
         Petal.Length = c(2, 5, 7),
-        Petal.Width = c(0,0,0)))
+        Petal.Width = c(0,0,0))) # this line is differ from regular prediction we used in S.Model. as it is needed for columns for our prediction result
