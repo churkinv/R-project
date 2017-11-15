@@ -64,7 +64,23 @@ predictions <- predict(
                        newdata = test,
                        type ="class")
 
-#create a confusion matrix
+#create a confusion matrix, it is used to see how ml model  correctly or not classified the date
 table(
       x = predictions,
-      y=test$Species)
+      y = test$Species)
+
+#load the caret package
+install.packages("caret")
+library(caret)
+install.packages("e1071")
+
+#evaluate the predictions results
+confusionMatrix(
+                data = predictions,
+                reference = test$Species)
+
+#save the tree model
+save(model, file = "Tree.RData")
+
+
+
